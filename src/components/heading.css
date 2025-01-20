@@ -1,0 +1,30 @@
+/* Container para assegurar que a imagem ocupe toda a tela */
+.full-screen-image-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilização da imagem para cobrir toda a tela */
+.full-screen-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Estilos para o texto no canto inferior direito */
+.full-screen-image-container h1 {
+  position: absolute;
+  bottom: 20px;       /* distância do fundo */
+  left: 20px;        /* distância da direita */
+  color: white;       /* cor do texto para contraste */
+  margin: 0;
+  padding: 0.5rem;    /* opcional: espaço interno para melhor legibilidade */
+  background: rgba(0, 0, 0, 0.5); /* opcional: fundo semitransparente para destacar o texto */
+  font-size: 2rem;    /* ajuste conforme necessário */
+}

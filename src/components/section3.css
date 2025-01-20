@@ -1,0 +1,154 @@
+/* section3.css */
+
+/* Main container for the section */
+.section3-container {
+  width: 100%;
+  padding: 5rem;
+  box-sizing: border-box;
+}
+
+/* Container that groups both columns (left and right) */
+.container-section-3 {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;  /* Space between columns */
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* LEFT COLUMN (50%) */
+.container-section-3-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;  /* Vertical space between the title and the image */
+}
+
+.container-section-3-left h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+/* Image */
+.section3-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section3-image img {
+  width: 100%;
+  max-height: 600px;  /* Adjust as needed */
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* RIGHT COLUMN (50%) */
+.container-section-3-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;  /* Space between the intro text and the form */
+}
+
+/* Intro text (inside the right column) */
+.intro-container-section-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.intro-container-section-3 p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Form */
+.section3-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Make all placeholders green */
+::placeholder {
+  color: green;
+}
+
+.section3-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Form field groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #555;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #000;
+  font-family: 'ArticulatCF', sans-serif;
+}
+
+/* Submit button */
+.section3-form button {
+  width: 150px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.section3-form button:hover {
+  background-color: #000;
+  transform: scale(1.05);
+}
+
+/* Responsive: stack columns on screens < 768px */
+@media (max-width: 768px) {
+  .container-section-3 {
+    flex-direction: column;
+  }
+
+  .container-section-3-left,
+  .container-section-3-right {
+    width: 100%;
+  }
+  
+  .section3-image {
+    margin-top: 20px;
+  }
+}

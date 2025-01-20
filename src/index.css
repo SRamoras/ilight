@@ -1,0 +1,51 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'ArticulatCF', sans-serif;
+  }
+  @font-face {
+    font-family: 'ArticulatCF';
+    src: url('./assets/articulatcf.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+
+
+
+  .sublinhado-animado {
+    color: #000;                  /* Cor inicial do texto */
+    position: relative;           /* Necessário para posicionar o ::after */
+    transition: color 0.3s ease;  /* Transição suave para troca de cor */
+    text-decoration: none;        /* Remove sublinhado padrão, se houver */
+  }
+
+  /* Pseudo-elemento para criar o sublinhado */
+  .sublinhado-animado::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;                  /* Espessura do sublinhado */
+    background-color: orange;     /* Cor do sublinhado */
+    transform: scaleX(0);         /* Começa invisível */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;  /* Animação do sublinhado */
+  }
+
+  /* Efeito ao passar o mouse */
+  .sublinhado-animado:hover {
+    color: orange;  /* Troca a cor do texto */
+  }
+
+  .sublinhado-animado:hover::after {
+    transform: scaleX(1);         /* Expande o sublinhado */
+    transform-origin: bottom left;
+  }
+
+
+
+

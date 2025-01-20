@@ -1,0 +1,60 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem ;
+  background: #f5f5f5;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+nav.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+nav.right-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Estilização para a logo */
+.logo {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+/* Estilização dos botões de idioma */
+.language-switch .lang-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem;
+  color: black;
+  transition: text-decoration 0.3s;
+}
+
+.language-switch .lang-btn:hover {
+  text-decoration: underline;
+}
+
+/* Estilização do link "Let's create something" */
+.create-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.create-link:hover {
+  background: #333;
+}
