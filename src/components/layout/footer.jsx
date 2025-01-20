@@ -26,19 +26,19 @@ const Footer = () => {
 
         <div className="footer-links1">
           <p className='subtitle-paragraf-footer'>CONTACT US</p>
-          <p  className='paragraf-h1'>geral@ilight.pt</p>
+          <p  className='paragraf-h1'>geral<span className='special-caracter'>@</span>ilight.pt</p>
         </div>
         {/* Contact and social links */}
   <div className='last-footer-links'>
 
         <div className="footer-links1">
            <p className='subtitle-paragraf-footer'>FOLLOW US</p>          
-           <a className='paragraf-h1' href="https://www.facebook.com/ilight.pt">Facebook</a>
+           <a className='paragraf-h1 sublinhado-animado' href="https://www.facebook.com/ilight.pt">Facebook</a>
         </div>
 
         <div>
           <div className="footer-links2">
-         <a className='paragraf-h1' href="/fr">FR</a><p className='paragraf-h1'>/</p><a className='paragraf-h1' href="/en">EN</a>
+         <a className='paragraf-h1 sublinhado-animado' href="/fr">FR</a><p className='paragraf-h1 special-caracter'>/</p><a className='paragraf-h1 sublinhado-animado' href="/en">EN</a>
           </div>
         </div>
 
@@ -52,7 +52,7 @@ const Footer = () => {
 
 
       <div className="footer-bottom">
-        <p>© 2024 Base Habitation</p>
+        <p>© 2025 All the rights reserved to ILight</p>
     
       </div>
     </footer>

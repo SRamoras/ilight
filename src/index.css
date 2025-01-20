@@ -1,19 +1,25 @@
-body{
+@font-face {
+  font-family: 'ArticulatCF';
+  src: url('./assets/articulatcf.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  /* Opcional: se quiser limitar a quais intervalos de Unicode a fonte se aplica, poderia usar unicode-range,
+     mas em geral não é estritamente necessário. */
+}
+
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'ArticulatCF', sans-serif;
-  }
-  @font-face {
-    font-family: 'ArticulatCF';
-    src: url('./assets/articulatcf.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
   
+  /* A ordem aqui importa: se o glifo não existir no "ArticulatCF",
+     o navegador tentará usar 'Arial', depois 'sans-serif'. */
+  font-family: 'ArticulatCF', Arial, sans-serif;
+}
 
-
-
+.special-caracter {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
   .sublinhado-animado {
     color: #000;                  /* Cor inicial do texto */
@@ -30,7 +36,7 @@ body{
     bottom: 0;
     width: 100%;
     height: 2px;                  /* Espessura do sublinhado */
-    background-color: orange;     /* Cor do sublinhado */
+    background-color: #FB8136;     /* Cor do sublinhado */
     transform: scaleX(0);         /* Começa invisível */
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;  /* Animação do sublinhado */
@@ -38,7 +44,7 @@ body{
 
   /* Efeito ao passar o mouse */
   .sublinhado-animado:hover {
-    color: orange;  /* Troca a cor do texto */
+    color: #FB8136;  /* Troca a cor do texto */
   }
 
   .sublinhado-animado:hover::after {
