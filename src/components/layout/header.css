@@ -2,33 +2,58 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5rem ;
-  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem 5rem;
   position: fixed;
   width: 100%;
   z-index: 100;
   box-sizing: border-box;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-bottom: 1px #000 solid;
 }
 
+/* Estado transparente quando está no topo */
+header.transparent {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Quando não estiver no topo, define um fundo branco */
+header:not(.transparent) {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Header visível */
+header.visible {
+  transform: translateY(0);
+}
+
+/* Header oculto: deslocado para cima fora da tela */
+header.hidden {
+  transform: translateY(-100%);
+}
+
+/* Resto do seu CSS existente */
+.language-switch {
+  display: flex;
+  gap: 5px;
+}
+
+.paragraf-h1 {
+color: #000;
+}
 nav.left-nav {
   display: flex;
   align-items: center;
 }
-
 nav.right-nav {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
-
-/* Estilização para a logo */
 .logo {
   width: 100px;
   height: auto;
   display: block;
 }
-
-/* Estilização dos botões de idioma */
 .language-switch .lang-btn {
   background: transparent;
   border: none;
@@ -38,24 +63,20 @@ nav.right-nav {
   color: black;
   transition: text-decoration 0.3s;
 }
-
 .language-switch .lang-btn:hover {
   text-decoration: underline;
 }
-
-/* Estilização do link "Let's create something" */
 .create-link {
   padding: 0.75rem 2rem;
   border: none;
   border-radius: 15px;
-  background-color: #000;  /* Cor de fundo */
-  color: #fff;            /* Cor do texto */
+  background-color: #000;
+  color: #fff;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.2s;
   text-decoration: none;
 }
-
 .create-link:hover {
-  background: #333;
+  background: #1d1d1d;
 }

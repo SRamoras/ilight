@@ -23,15 +23,19 @@ const Showcase = () => {
       <div className="center-text">
         <div className="center-content">
           <h1 className="main-title">
-            Empowering homes and businesses with advanced electrical solutions.
+            <span className='orange-text'>Empowering</span> homes and businesses with <span className='blue-text'>advanced</span> electrical solutions.
           </h1>
           {/* Novo parágrafo abaixo do título */}
           <p className="additional-text">
             We bring innovative ideas and professional expertise to light up your future.
           </p>
           <div className="button-container">
-            <button>Gallery</button>
-            <button>Contact us</button>
+            <button className='button-heading1'>
+              <a href="/gallery"><p>Gallery</p></a>
+            </button>
+            <button className='button-heading2'>
+              <p>Contact us</p>
+            </button>
           </div>
         </div>
       </div>
@@ -45,4 +49,5 @@ const Showcase = () => {
     </div>
   );
 };
+
 export default Showcase;

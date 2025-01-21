@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/mainlayout';
 import MainPage from './pages/mainpage';
-
+import GalleryPage from './pages/gallerypage';
 import './App.css';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           path="/gallery" 
           element={
             <MainLayout>
-              <MainPage />
+              <GalleryPage />
             </MainLayout>
           } 
         />

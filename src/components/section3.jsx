@@ -28,8 +28,8 @@ const Section3 = () => {
           <div className="intro-container-section-3">
             <p>Start here</p>
             <p>
-              iLight specializes in sustainable electrical systems for homes and businesses. <br />
-              Fill out the form below and receive <br />
+              iLight specializes in sustainable electrical systems for homes and businesses. 
+              Fill out the form below and receive 
               personalized assistance on how to optimize your energy consumption.
             </p>
           </div>

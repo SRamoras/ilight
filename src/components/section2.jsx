@@ -11,7 +11,7 @@ const Section1 = () => {
       <div className="section1-container-text">
         <p className="why-choose-us">Why Choose Us</p>
         <h1 className="electricity-title">
-          Your Partner in Innovative Electrical Solutions
+          Your       <span className='orange-text'>Partner </span>  in Innovative Electrical       <span className='blue-text'>Solutions </span>  
         </h1>
         <p className="description">
           Discover how our expertise and commitment to quality can help transform your spaces with cutting-edge electrical solutions. Explore a range of services designed to meet diverse needs, ensuring efficiency, safety, and sustainability.

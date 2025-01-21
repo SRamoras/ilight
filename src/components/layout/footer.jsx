@@ -38,7 +38,7 @@ const Footer = () => {
 
         <div>
           <div className="footer-links2">
-         <a className='paragraf-h1 sublinhado-animado' href="/fr">FR</a><p className='paragraf-h1 special-caracter'>/</p><a className='paragraf-h1 sublinhado-animado' href="/en">EN</a>
+         <a className='paragraf-h1 sublinhado-animado' href="/fr">PT</a><p className='paragraf-h1 special-caracter'>/</p><a className='paragraf-h1 sublinhado-animado' href="/en">ENG</a>
           </div>
         </div>
 

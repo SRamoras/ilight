@@ -1,0 +1,50 @@
+.carousel-container {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    white-space: nowrap;
+    scrollbar-width: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+  }
+  
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel-container:active {
+    cursor: grabbing;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 40px;
+    align-items: center; /* Alinha os itens na parte inferior do contêiner */
+    height: 100%; /* ou um valor específico, conforme necessário */
+  }
+  
+  
+  .carousel img {
+    flex-shrink: 0;
+    user-drag: none;
+    user-select: none;
+    width: 365px;
+    height: 470px;
+    pointer-events: none;
+    transform: rotateZ(0deg);
+    margin-top: 50px; /* Ajuste esse valor conforme necessário */
+     object-fit: cover;
+  }
+.h1class{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 1rem;
+    text-align: center;
+    z-index: 1000;
+}

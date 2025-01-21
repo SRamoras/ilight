@@ -1,6 +1,6 @@
 import React from 'react';
 import './section1.css';  // Importa o arquivo de estilos
-import Section1Image from '../assets/section1.jpg';  // Importa a imagem
+import Section1Image from '../assets/casa.jpg';  // Importa a imagem
 
 const Section1 = () => {
   return (
@@ -10,12 +10,12 @@ const Section1 = () => {
       
       {/* Título estilizado para o setor elétrico */}
       <h1 className="electricity-title">
-        Bright
+      <span className='blue-text'>Bright </span>  
         solutions
         for
         clean,<br />
-         sustainable
-        energy.
+         sustainable 
+         <span className='orange-text'> energy. </span>  
       </h1>
 
       <p className="description">

@@ -6,7 +6,12 @@
   /* Opcional: se quiser limitar a quais intervalos de Unicode a fonte se aplica, poderia usar unicode-range,
      mas em geral não é estritamente necessário. */
 }
-
+* {
+  box-sizing: border-box; 
+   margin: 0;
+  padding: 0;
+  font-family: 'ArticulatCF', Arial, sans-serif;
+}
 body {
   margin: 0;
   padding: 0;
