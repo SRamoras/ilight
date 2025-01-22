@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next';  // Importa o hook e o componente Trans
 import './header.css';
 import Logo from '../../assets/logo.png';
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const [showHeader, setShowHeader] = useState(true);
   const [isTop, setIsTop] = useState(true);
   let lastScrollY = window.pageYOffset;
@@ -26,9 +28,13 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Função para trocar o idioma
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <header className={`${showHeader ? 'visible' : 'hidden'} ${isTop ? 'transparent' : ''}`}>
@@ -39,12 +45,28 @@ const Header = () => {
       </nav>
       <nav className="right-nav">
         <div className="language-switch">
-          <a className='paragraf-h1 sublinhado-animado' href="/fr">PT</a>
+          <button 
+            className='paragraf-h1 sublinhado-animado  language-button' 
+            onClick={() => changeLanguage('pt')}
+          >
+            PT
+          </button>
           <p className='paragraf-h1 special-caracter'>/</p>
-          <a className='paragraf-h1 sublinhado-animado' href="/en">ENG</a>
+          <button 
+            className='paragraf-h1 sublinhado-animado language-button' 
+            onClick={() => changeLanguage('en')}
+          >
+            EN
+          </button>
         </div>
         <Link to="/gallery" className="create-link">
-          Let<span className='special-caracter'>'</span>s create something
+          <Trans
+            i18nKey="header.letsCreate"
+            components={{
+              // Define um componente para estilizar o apóstrofo
+              special: <span className="special-caracter" />
+            }}
+          />
         </Link>
       </nav>
     </header>

@@ -80,3 +80,13 @@ nav.right-nav {
 .create-link:hover {
   background: #1d1d1d;
 }
+
+
+.language-button{
+
+
+  outline: none;
+  border: none; 
+  background: transparent;
+  cursor: pointer;
+}

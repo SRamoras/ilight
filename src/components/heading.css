@@ -129,7 +129,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #000;
+  color: #000 !important;
 }
 
 .button-heading2 {
@@ -146,7 +146,10 @@
   justify-content: center;
   align-items: center;
 }
-
+.gallery-button{
+text-decoration: none;
+color: #000;
+}
 /* Centraliza o parágrafo dentro do botão */
 .button-heading1 p,
 .button-heading2 p {

@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import './gallery.css';
+
 import img1 from '../assets/open1.jpg';
 import img2 from '../assets/open5.jpg';
 import img3 from '../assets/open3.jpg';
@@ -7,26 +9,17 @@ import img4 from '../assets/open4.jpg';
 import img5 from '../assets/open2.jpg';
 import img6 from '../assets/open6.jpg';
 
-
-
-
-
-
-const images = [
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-    img6
-];
+const images = [img1, img2, img3, img4, img5, img6];
 
 const Carousel = () => {
+  const { t } = useTranslation();
+
   const carouselRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
+  // Replicamos as imagens para criar looping
   const [slides] = useState([
     ...images, ...images, ...images, ...images, ...images,
     ...images, ...images, ...images, ...images, ...images,
@@ -35,6 +28,7 @@ const Carousel = () => {
   ]);
 
   let rafId;
+
   const updateArcEffect = () => {
     if (rafId) cancelAnimationFrame(rafId);
     rafId = requestAnimationFrame(applyArcEffect);
@@ -43,24 +37,23 @@ const Carousel = () => {
   const applyArcEffect = () => {
     const container = carouselRef.current;
     if (!container) return;
-    
-    const images = container.querySelectorAll('img');
+
+    const imgs = container.querySelectorAll('img');
     const containerCenter = container.scrollLeft + container.offsetWidth / 2;
-    
+
     const amplitude = 40;
     const angleAmplitude = 10;
     const maxDistance = container.offsetWidth / 2;
 
-    images.forEach(img => {
+    imgs.forEach(img => {
       const imgCenter = img.offsetLeft + img.offsetWidth / 2;
       const distance = Math.abs(containerCenter - imgCenter);
-      
-      // Direção invertida: esquerda -> esquerda, direita -> direita
+
+      // Define a direção e calcula offset e ângulo
       const direction = containerCenter > imgCenter ? -1 : 1;
-      
       const offset = -amplitude * Math.cos((distance / maxDistance) * Math.PI);
       const angle = Math.min(angleAmplitude, (angleAmplitude * distance) / maxDistance);
-      
+
       img.style.transform = `translateY(${offset}px) rotateZ(${direction * angle}deg)`;
     });
   };
@@ -74,9 +67,12 @@ const Carousel = () => {
     const maxScrollLeft = scrollWidth - containerWidth;
     const threshold = containerWidth;
 
+    // Se estiver muito no início, recola para o meio
     if (container.scrollLeft < threshold) {
       container.scrollLeft += maxScrollLeft / 2;
-    } else if (container.scrollLeft > maxScrollLeft - threshold) {
+    }
+    // Se estiver muito no fim, recola para trás
+    else if (container.scrollLeft > maxScrollLeft - threshold) {
       container.scrollLeft -= maxScrollLeft / 2;
     }
   };
@@ -85,6 +81,7 @@ const Carousel = () => {
     const container = carouselRef.current;
     if (!container) return;
 
+    // Centraliza o scroll ao iniciar
     const totalWidth = container.scrollWidth;
     container.scrollLeft = totalWidth / 2;
     updateArcEffect();
@@ -121,25 +118,35 @@ const Carousel = () => {
   };
 
   return (
-    
-
-
-
-
-    <div
-      className="carousel-container"
-      ref={carouselRef}
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
-    >
-      <div className="carousel">
-        {slides.map((src, index) => (
-          <img key={index} src={src} alt={`Slide ${index + 1}`} />
-        ))}
+    <div className="showcase-container-gallery">
+      <div
+        className="carousel-container"
+        ref={carouselRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+      >
+        <div className="carousel">
+          {slides.map((src, index) => (
+            <img key={index} src={src} alt={`Slide ${index + 1}`} />
+          ))}
+        </div>
       </div>
-      </div> 
+
+      <div className='text-gallery'>
+        <p className='description1'>
+          <Trans
+            i18nKey="gallery.welcome"
+            components={{
+              special: <span className="special-caracter" />
+            }}
+          />
+        </p>
+        <h1 className='electricity-title1'>{t('gallery.servicesOffered')}</h1>
+        <p className='description1'>{t('gallery.photoReflects')}</p>
+      </div>
+    </div>
   );
 };
 

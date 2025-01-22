@@ -1,53 +1,44 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './section1.css';  // Importa o arquivo de estilos
 import Section1Image from '../assets/casa.jpg';  // Importa a imagem
 
 const Section1 = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="section1-container">
-            <div className="section1-container-text">
-      <p className="subtitle">WHAT WE DO</p>
+      <div className="section1-container-text">
+        <p className="subtitle">{t('section1.whatWeDo')}</p>
+        
+        {/* Título estilizado para o setor elétrico */}
+        <h1 className="electricity-title">
+          <span className='blue-text'>{t('section1.bright')}</span> {t('section1.solutionsFor')}<br />
+          {t('section1.sustainable')} <span className='orange-text'>{t('section1.energy')}</span>
+        </h1>
+
+        <p className="description">
+          {t('section1.description')}
+        </p>
+      </div>
       
-      {/* Título estilizado para o setor elétrico */}
-      <h1 className="electricity-title">
-      <span className='blue-text'>Bright </span>  
-        solutions
-        for
-        clean,<br />
-         sustainable 
-         <span className='orange-text'> energy. </span>  
-      </h1>
-
-      <p className="description">
-      We work with innovative electrical solutions, carrying out installations, maintenance and consultancy to ensure energy efficiency and safety in different environments.
-      </p></div>
       <div className='img-section-1-container'>
-      <img 
-        src={Section1Image} 
-        alt="Descrição da imagem" 
-        className="section1-image" 
-      />
-
-
-</div>
+        <img 
+          src={Section1Image} 
+          alt={t('section1.imageAlt')} 
+          className="section1-image" 
+        />
+      </div>
 
       <div className='container-descreption-img'>
-
-     <h1 className="electricity-title-1">
-     Elegance and Efficiency: Transforming Spaces with Innovative Lighting
-      </h1>
-
-<p className='electricity-p-1'>Our lighting solutions transform homes into safer environments 
-and welcoming, bringing efficiency and innovation to each space.</p>
-
-    
-    
-    
-    
-    
-    
-    
-    </div></div>
+        <h1 className="electricity-title-1">
+          {t('section1.eleganceEfficiency')}
+        </h1>
+        <p className='electricity-p-1'>
+          {t('section1.lightingSolutions')}
+        </p>
+      </div>
+    </div>
   );
 }
 
