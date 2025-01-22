@@ -146,7 +146,7 @@ i18n
             lightingSolutions: "Nossas soluções de iluminação transformam lares em ambientes mais seguros e acolhedores, trazendo eficiência e inovação para cada espaço."
           },
           section2: {
-            whyChooseUs: "Por que nos escolher",
+            whyChooseUs: "Porquê nos escolher",
             your: "Seu",
             partner: "Parceiro",
             in: "em soluções Elétricas ",

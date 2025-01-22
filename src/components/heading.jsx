@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { Link } from 'react-router-dom';  // Importamos Link do react-router-dom
 import './heading.css';
 
 import Img1 from '../assets/open1.jpg';
@@ -11,6 +12,14 @@ import Img6 from '../assets/open6.jpg';
 
 const Showcase = () => {
   const { t } = useTranslation();
+
+  // Função para rolar suavemente até a seção com id 'section3'
+  const handleContactClick = () => {
+    const section = document.getElementById('section3');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="showcase-container">
@@ -29,11 +38,10 @@ const Showcase = () => {
             {t('showcase.innovativeIdeas')}
           </p>
           <div className="button-container">
-            <button className='button-heading1'>
-              <a className='gallery-button' href="/gallery"><p>{t('showcase.gallery')}</p></a>
-            </button>
-            <button className='button-heading2'>
-              {/* Onde exibimos "Contate-nos" com hífen estilizado */}
+            <Link to="/gallery" className='button-heading1 gallery-button'>
+              <p>{t('showcase.gallery')}</p>
+            </Link>
+            <button className='button-heading2' onClick={handleContactClick}>
               <p>
                 <Trans
                   i18nKey="showcase.contactUs"

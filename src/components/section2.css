@@ -2,81 +2,38 @@
   text-align: center;
   padding: 5rem;
   margin: 0 auto;
-   display: flex;
-flex-direction: column;
-gap: 60px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
+
 .section1-container-text {
   text-align: center;
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
+  overflow: hidden;
 }
+
 .electricity-title {
   font-size: 64px;
   margin-bottom: 1rem;
   font-weight: 400;
   line-height: 1;
-  margin-top:5px;
-}
-.service h2{
-  font-size: 64px;
-  margin-bottom: 1rem;
-  font-weight: 400;
-  line-height: 1;
-  margin-top:5px;
-  text-align: start;
+  margin-top: 5px;
 }
 
-.section1-container .intro-paragraph {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;  
-  
+.why-choose-us {
+  font-size: 20px;
+  margin-bottom: 1rem;
 }
 
 .description {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 1rem;
-  text-align: center;  
+  text-align: center;
 }
-.service p{
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  text-align: start;  
-}
-.section1-image {
-
-  min-width: 100%;
-  height: auto;
-  border-radius: 25px;
-  margin-top: 1rem;
-}
-
-
-.img-section-1-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  width: 100%;
-}
-
-.container-descreption-img {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-  margin-top: 2rem;
-  width: 100%;
-
-  
-}
-
-
 
 .services-section-container {
   display: flex;
@@ -92,9 +49,6 @@ gap: 60px;
   width: 1000px;
 }
 
-
-
-
 .services-list {
   display: flex;
   flex-direction: column;
@@ -102,15 +56,14 @@ gap: 60px;
   text-align: left;
 }
 
-/* Adiciona separador entre categorias */
 .service-category {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #ccc; /* Linha separadora */
+  border-bottom: 1px solid #ccc;
 }
 
 .service-category:last-child {
-  border-bottom: none; /* Remove linha no final, se preferir */
+  border-bottom: none;
 }
 
 .service-category h2 {
@@ -118,17 +71,12 @@ gap: 60px;
   margin-bottom: 0.5rem;
 }
 
-.service-category ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-.service-category li {
+.service-category p {
   font-size: 18px;
   line-height: 1.6;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: start;
 }
-
 
 .container-principal-services {
   display: flex;
@@ -137,4 +85,60 @@ gap: 60px;
   flex-direction: column;
   margin: 0 auto;
   gap: 40px;
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+  .electricity-title {
+    font-size: 48px;
+  }
+
+  .why-choose-us {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .service-category h2 {
+    font-size: 28px;
+  }
+
+  .service-category p {
+    font-size: 16px;
+  }
+
+  .section2-container {
+    padding: 3rem;
+    gap: 40px;
+  }
+
+  .services-section-container {
+    flex-direction: column;
+  }
+
+  .additional-services-image {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .services-list {
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-category {
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .service-category h2 {
+    font-size: 24px;
+  }
+
+  .service-category p {
+    font-size: 14px;
+  }
 }

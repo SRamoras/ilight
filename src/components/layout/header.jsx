@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation, Trans } from 'react-i18next';  // Importa o hook e o componente Trans
 import './header.css';
@@ -36,6 +36,13 @@ const Header = () => {
     i18n.changeLanguage(lng);
   };
 
+  const handleContactClick = () => {
+    const section = document.getElementById('section3');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className={`${showHeader ? 'visible' : 'hidden'} ${isTop ? 'transparent' : ''}`}>
       <nav className="left-nav">
@@ -46,7 +53,7 @@ const Header = () => {
       <nav className="right-nav">
         <div className="language-switch">
           <button 
-            className='paragraf-h1 sublinhado-animado  language-button' 
+            className='paragraf-h1 sublinhado-animado language-button' 
             onClick={() => changeLanguage('pt')}
           >
             PT
@@ -59,15 +66,16 @@ const Header = () => {
             EN
           </button>
         </div>
-        <Link to="/gallery" className="create-link">
-          <Trans
-            i18nKey="header.letsCreate"
-            components={{
-              // Define um componente para estilizar o apóstrofo
-              special: <span className="special-caracter" />
-            }}
-          />
-        </Link>
+        <button className='create-link' onClick={handleContactClick}>
+          <p>
+            <Trans
+              i18nKey="header.letsCreate"
+              components={{
+                special: <span className="special-caracter" />
+              }}
+            />
+          </p>
+        </button>
       </nav>
     </header>
   );

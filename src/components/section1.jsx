@@ -1,14 +1,50 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import './section1.css';  // Importa o arquivo de estilos
+import { gsap } from 'gsap';               // Importa GSAP
+import './section1.css';                    // Importa o arquivo de estilos
 import Section1Image from '../assets/casa.jpg';  // Importa a imagem
 
 const Section1 = () => {
   const { t } = useTranslation();
+  
+  // Referências para os contêineres que queremos animar
+  const textContainerRef = useRef(null);
+  const descriptionContainerRef = useRef(null);
+
+  useEffect(() => {
+    // Cria uma instância do Intersection Observer
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animação para todos os elementos filhos do container que entrou na viewport
+          gsap.from(entry.target.children, {
+            duration: 1,
+            y: 50,                              // Inicia 50px abaixo
+            opacity: 0,                         // Inicia transparente
+       
+            stagger: 0.3,                       // Atraso entre cada elemento
+            ease: "power4.out"
+          });
+
+          // Para de observar este elemento após a animação
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1  // Ajusta a porcentagem de visibilidade necessária para disparar a animação
+    });
+
+    // Observa os contêineres de texto e descrição
+    if (textContainerRef.current) observer.observe(textContainerRef.current);
+    if (descriptionContainerRef.current) observer.observe(descriptionContainerRef.current);
+
+    // Cleanup ao desmontar o componente
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="section1-container">
-      <div className="section1-container-text">
+      <div className="section1-container-text" ref={textContainerRef}>
         <p className="subtitle">{t('section1.whatWeDo')}</p>
         
         {/* Título estilizado para o setor elétrico */}
@@ -30,7 +66,7 @@ const Section1 = () => {
         />
       </div>
 
-      <div className='container-descreption-img'>
+      <div className='container-descreption-img' ref={descriptionContainerRef}>
         <h1 className="electricity-title-1">
           {t('section1.eleganceEfficiency')}
         </h1>

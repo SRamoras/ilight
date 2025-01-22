@@ -1,16 +1,48 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import './section2.css';  // Import style file
+import { gsap } from 'gsap';  // Importa GSAP
+import './section2.css';       // Importa o arquivo de estilos
 
-import Section2Image1 from '../assets/section2_1img.jpg';  // Import image
-import Section2Image2 from '../assets/section2_2img.jpg';  // Import image
-import Section1Image from '../assets/section1.jpg';       // Import image
+import Section2Image1 from '../assets/section2_1img.jpg';  // Importa imagens
+import Section2Image2 from '../assets/section2_2img.jpg';
 
 const Section1 = () => {
   const { t } = useTranslation();
+  
+  // Referência para o contêiner inteiro da seção
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Seleciona todos os elementos filhos da seção que entra na viewport
+          const elementsToAnimate = entry.target.querySelectorAll('*');
+          
+          // Aplica animação em todos os elementos filhos
+          gsap.from(elementsToAnimate, {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            stagger: 0.1,
+            ease: "power2.out"
+          });
+
+          // Para de observar após a animação
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="section2-container">
+    <div className="section2-container" ref={sectionRef}>
       <div className="section1-container-text">
         <p className="why-choose-us">{t('section2.whyChooseUs')}</p>
         <h1 className="electricity-title">

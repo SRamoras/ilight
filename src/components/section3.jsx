@@ -1,13 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import './section3.css'; // Import the stylesheet
-import Section3Image from '../assets/formimg.png'; // Adjust the image path as needed
+import { gsap } from 'gsap'; 
+import './section3.css'; 
+import Section3Image from '../assets/formimg.png'; 
 
 const Section3 = () => {
   const { t } = useTranslation();
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const elementsToAnimate = entry.target.querySelectorAll('*');
+          gsap.from(elementsToAnimate, {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            stagger: 0.05,
+            ease: "power2.out"
+          });
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="section3-container">
+    <section id='section3' className="section3-container" ref={sectionRef}>
       <div className="container-section-3"> 
 
         {/* LEFT COLUMN: Title + Image */}
@@ -29,9 +55,7 @@ const Section3 = () => {
         <div className="container-section-3-right">  
           <div className="intro-container-section-3">
             <p>{t('section3.startHere')}</p>
-            <p>
-              {t('section3.intro')}
-            </p>
+            <p>{t('section3.intro')}</p>
           </div>
 
           <div className="section3-form">
