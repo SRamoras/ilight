@@ -1,3 +1,4 @@
+// Section2.jsx
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap';  // Importa GSAP
@@ -6,7 +7,7 @@ import './section2.css';       // Importa o arquivo de estilos
 import Section2Image1 from '../assets/section2_1img.jpg';  // Importa imagens
 import Section2Image2 from '../assets/section2_2img.jpg';
 
-const Section1 = () => {
+const Section2 = () => {
   const { t } = useTranslation();
   
   // Referência para o contêiner inteiro da seção
@@ -43,7 +44,7 @@ const Section1 = () => {
 
   return (
     <div className="section2-container" ref={sectionRef}>
-      <div className="section1-container-text">
+      <div className="section2-container-text">
         <p className="why-choose-us">{t('section2.whyChooseUs')}</p>
         <h1 className="electricity-title">
           {t('section2.your')} <span className='orange-text'>{t('section2.partner')}</span> {t('section2.in')} <span className='blue-text'>{t('section2.solutions')}</span>
@@ -116,4 +117,4 @@ const Section1 = () => {
   );
 }
 
-export default Section1;
+export default Section2;

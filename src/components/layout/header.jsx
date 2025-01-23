@@ -1,6 +1,7 @@
+// Header.jsx
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useTranslation, Trans } from 'react-i18next';  // Importa o hook e o componente Trans
+import { useTranslation, Trans } from 'react-i18next';
 import './header.css';
 import Logo from '../../assets/logo.png';
 
@@ -14,14 +15,11 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
 
-      // Verifica se está no topo da página
       setIsTop(currentScrollY === 0);
 
       if (currentScrollY < lastScrollY) {
-        // Scroll Up
         setShowHeader(true);
       } else {
-        // Scroll Down
         setShowHeader(false);
       }
       lastScrollY = currentScrollY;
@@ -31,7 +29,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Função para trocar o idioma
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };

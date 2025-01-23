@@ -1,3 +1,4 @@
+// Section3.jsx
 import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { gsap } from 'gsap'; 

@@ -1,3 +1,4 @@
+/* header.css */
 header {
   display: flex;
   justify-content: space-between;
@@ -97,24 +98,35 @@ nav.right-nav {
 /* Media Queries para dispositivos móveis */
 @media (max-width: 768px) {
   header {
-    padding: 1rem 2rem;
-    flex-direction: column;
-    gap: 1rem;
+    padding: 0.5rem 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   nav.left-nav,
   nav.right-nav {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .language-switch {
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 5px;
   }
 
   .create-link {
-    width: 100%;
+    width: auto;
     text-align: center;
-    padding: 0.75rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .logo {
+    width: 80px;
   }
 }

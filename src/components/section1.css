@@ -79,29 +79,43 @@
 @media (max-width: 768px) {
   .electricity-title,
   .electricity-title-1 {
-    font-size: 48px;
+    font-size: 32px!important;
+    margin: 0 !important;
   }
+.section1-container-text{
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column	;
+    gap: 20px;
+}
+
+ 
 
   .description,
   .electricity-p-1 {
     font-size: 16px;
+    margin: 0 !important;
   }
 
   .section1-container {
-    padding: 3rem;
+    padding:3rem 1rem
   }
 
   .container-descreption-img {
     flex-direction: column;
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: center;
   }
 
   .electricity-title-1 {
-    text-align: center;
+    text-align: start;
     margin-bottom: 1rem;
+    font-size: 32px !important;
   }
 
   .electricity-p-1 {
-    text-align: center;
+    text-align: start;
   }
 }

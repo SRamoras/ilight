@@ -1,3 +1,4 @@
+// Carousel.jsx
 import React, { useRef, useState, useEffect } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import './gallery.css';
@@ -41,8 +42,8 @@ const Carousel = () => {
     const imgs = container.querySelectorAll('img');
     const containerCenter = container.scrollLeft + container.offsetWidth / 2;
 
-    const amplitude = 40;
-    const angleAmplitude = 10;
+    const amplitude = window.innerWidth < 768 ? 20 : 40;
+    const angleAmplitude = window.innerWidth < 768 ? 5 : 10;
     const maxDistance = container.offsetWidth / 2;
 
     imgs.forEach(img => {
@@ -93,6 +94,12 @@ const Carousel = () => {
     setScrollLeft(carouselRef.current.scrollLeft);
   };
 
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - carouselRef.current.offsetLeft);
+    setScrollLeft(carouselRef.current.scrollLeft);
+  };
+
   const handleMouseLeave = () => {
     if (isDragging) {
       setIsDragging(false);
@@ -117,6 +124,23 @@ const Carousel = () => {
     updateArcEffect();
   };
 
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const container = carouselRef.current;
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = x - startX;
+    container.scrollLeft = scrollLeft - walk;
+    updateArcEffect();
+  };
+
+  const handleTouchEnd = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      adjustSlides();
+      updateArcEffect();
+    }
+  };
+
   return (
     <div className="showcase-container-gallery">
       <div
@@ -126,6 +150,9 @@ const Carousel = () => {
         onMouseLeave={handleMouseLeave}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div className="carousel">
           {slides.map((src, index) => (

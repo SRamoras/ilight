@@ -1,3 +1,4 @@
+/* heading.css */
 /* Reset básico */
 * {
   margin: 0;
@@ -8,32 +9,29 @@
 /* Container geral, ocupando altura total da tela, com espaço entre as colunas */
 .showcase-container {
   display: flex;
-  align-items: center;            
+  align-items: center;
   justify-content: space-between;
-  height: 100vh;                  
-  width: 100%;                    
-  padding: 1rem;                  
+  height: 100vh;
+  width: 100%;
+  padding: 1rem;
   border-bottom: #171717 1px solid;
 }
 
-/* 
-  Cada coluna tem position: relative 
-  para que possamos posicionar as imagens (absolute) dentro dela
-*/
+/* Cada coluna tem position: relative para posicionar as imagens */
 .images-column {
   position: relative;
-  width: 25%;         
-  height: 80%;        
-  margin: 0 1rem;     
-  overflow: visible;  
+  width: 25%;
+  height: 80%;
+  margin: 0 1rem;
+  overflow: visible;
 }
 
-/* As imagens sobrepostas em cada coluna */
+/* Imagens sobrepostas */
 .img-overlap {
-  position: absolute; 
-  max-width: 70%;     
-  height: auto;       
-  border-radius: 6px; 
+  position: absolute;
+  max-width: 70%;
+  height: auto;
+  border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s;
 }
@@ -118,7 +116,7 @@
 
 /* Estilos básicos de botão */
 .button-heading1 {
-  padding:  0.75rem 2rem 0.65rem 2rem ;
+  padding: 0.75rem 2rem 0.65rem 2rem;
   border: 1px solid #FB8136;
   border-radius: 15px;
   background-color: #FB8136;
@@ -133,7 +131,7 @@
 }
 
 .button-heading2 {
-  padding:  0.75rem 2rem 0.65rem 2rem ;
+  padding: 0.75rem 2rem 0.65rem 2rem;
   border: 3px solid #32556D;
   border-radius: 15px;
   background-color: transparent;
@@ -146,10 +144,12 @@
   justify-content: center;
   align-items: center;
 }
-.gallery-button{
-text-decoration: none;
-color: #000;
+
+.gallery-button {
+  text-decoration: none;
+  color: #000;
 }
+
 /* Centraliza o parágrafo dentro do botão */
 .button-heading1 p,
 .button-heading2 p {
@@ -174,4 +174,96 @@ color: #000;
 .button-heading2:hover {
   background-color: #32556D;
   color: white;
+}
+
+/* Estilos para caracteres especiais */
+.special-caracter {
+  font-family: Arial, sans-serif;
+}
+
+/* Media Queries para dispositivos móveis */
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+  .showcase-container {
+    flex-direction: column;
+    height: 100vh;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  /* Mostrar apenas img1 e img4 */
+  .images-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 2.5rem 0;
+  }
+
+  .left-column .img2,
+  .left-column .img3,
+  .right-column .img5,
+  .right-column .img6 {
+    display: none;
+  }
+
+  .left-column .img1,
+  .right-column .img4 {
+    display: block;
+    top: 0%;
+    right: 15%;
+    transform: rotate(4deg);
+  }
+
+  .img-overlap {
+    position: relative;
+    max-width: 90%;
+    margin: 0.5rem auto;
+    transform: rotate(0);
+    box-shadow: none;
+  }
+
+  .center-text {
+    width: 100%;
+    padding: 1rem 0;
+    height: auto;
+  }
+
+  .center-content {
+    max-width: 100%;
+  }
+
+  .center-content h1 {
+    font-size: 31px;
+   text-align: center;
+ 
+  }
+
+  .additional-text {
+    font-size: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .button-heading1,
+  .button-heading2 {
+    width: 100%;
+    padding: 0.6rem 1.5rem 0.4rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  .button-heading1 {
+    justify-content: center;
+  }
+
+  .button-heading2 {
+    justify-content: center;
+  }
 }

@@ -1,10 +1,18 @@
 /* section3.css */
 
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Main container for the section */
 .section3-container {
   width: 100%;
   padding: 5rem;
   box-sizing: border-box;
+  background-color: #f9f9f9;
 }
 
 /* Container that groups both columns (left and right) */
@@ -28,6 +36,7 @@
 .container-section-3-left h1 {
   font-size: 36px;
   margin: 0;
+  color: #333;
 }
 
 /* Image */
@@ -66,6 +75,7 @@
   min-width: 100px;
   line-height: 1.6;
   margin: 0;
+  color: #555;
 }
 
 /* Form */
@@ -112,7 +122,6 @@
   border-radius: 4px;
 }
 
-
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #000;
@@ -121,8 +130,7 @@
 
 /* Submit button */
 .section3-form button {
-
-    padding:  0.75rem 2rem 0.65rem 2rem ;
+    padding: 0.75rem 2rem;
     border: 1px solid #000;
     border-radius: 15px;
     background-color: #000;
@@ -135,7 +143,6 @@
     align-items: center;
     color: #fff;
     width: 150px;
-
 }
 
 .section3-form button:hover {
@@ -156,5 +163,92 @@
   
   .section3-image {
     margin-top: 20px;
+  }
+
+  /* Adjust titles */
+  .container-section-3-left h1 {
+    font-size: 32px;
+    text-align: start;
+  }
+
+  /* Adjust intro text */
+  .intro-container-section-3 {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .container-section-3-left{
+    gap: 20px;
+  }
+  .intro-container-section-3 p {
+    font-size: 16px;
+    text-align: center;
+    min-width: unset;
+  }
+
+  /* Adjust description */
+  .description,
+  .services-text {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* Form adjustments */
+  .section3-form {
+    width: 100%;
+  }
+
+  .section3-form h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .form-container {
+    gap: 10px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+
+  .section3-form button {
+    width: 100%;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Improve divisions between topics */
+  .service-category {
+    border: none;
+    padding: 1rem 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .service-category:last-child {
+    border-bottom: none;
+  }
+
+  .services-list {
+    border-top: 1px solid #ccc;
+    padding-top: 1rem;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  /* Adjust image size */
+  .additional-services-image {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+  }
+
+
+  .section3-container {
+    padding: 3rem 1rem;
   }
 }

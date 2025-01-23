@@ -1,6 +1,7 @@
+// Showcase.jsx
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { Link } from 'react-router-dom';  // Importamos Link do react-router-dom
+import { Link } from 'react-router-dom';
 import './heading.css';
 
 import Img1 from '../assets/open1.jpg';
@@ -13,7 +14,6 @@ import Img6 from '../assets/open6.jpg';
 const Showcase = () => {
   const { t } = useTranslation();
 
-  // Função para rolar suavemente até a seção com id 'section3'
   const handleContactClick = () => {
     const section = document.getElementById('section3');
     if (section) {

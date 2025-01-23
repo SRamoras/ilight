@@ -89,43 +89,40 @@
 
 /* Estilos para mobile */
 @media (max-width: 768px) {
-  .electricity-title {
-    font-size: 48px;
+  .section2-container {
+    padding: 3rem 1rem;
+    gap: 40px;
   }
 
+  /* Ajuste de títulos */
+  .electricity-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  /* Subtítulo */
   .why-choose-us {
     font-size: 18px;
   }
 
-  .description {
+  /* Ajuste de descrições */
+  .description,
+  .services-text {
     font-size: 16px;
+    text-align: center;
   }
 
-  .service-category h2 {
-    font-size: 28px;
-  }
-
-  .service-category p {
-    font-size: 16px;
-  }
-
-  .section2-container {
-    padding: 3rem;
-    gap: 40px;
-  }
-
+  /* Container de serviços em coluna */
   .services-section-container {
     flex-direction: column;
-  }
-
-  .additional-services-image {
-    width: 100%;
-    max-width: 500px;
+    align-items: center;
+    gap: 20px;
   }
 
   .services-list {
     align-items: center;
     text-align: center;
+    gap: 1.5rem;
   }
 
   .service-category {
@@ -136,9 +133,47 @@
 
   .service-category h2 {
     font-size: 24px;
+    color: #32556D;
+    text-align: start;
   }
 
-  .service-category p {
+  .services-text {
     font-size: 14px;
+    color: #555;
+    text-align: start;
+
+  }
+
+  /* Imagem de serviços ajustada para mobile */
+  .additional-services-image {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  /* Melhorias nas divisões entre os tópicos */
+  .services-list {
+    border-top: 1px solid #ccc;
+    padding-top: 1rem;
+    width: 100%;
+  }
+
+  .service-category {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .service-category:last-child {
+    border-bottom: none;
+    width: 100%;
+  }
+.section2-container-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+  /* Centralização dos conteúdos */
+  .services-image {
+    margin-top: 1rem;
   }
 }
