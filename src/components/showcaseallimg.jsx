@@ -1,4 +1,3 @@
-// ShowcaseAllImg.jsx
 import React, { useState } from 'react';
 import './showcaseAllImg.css';
 
