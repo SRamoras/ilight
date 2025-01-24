@@ -32,9 +32,7 @@
   transition: transform 0.3s ease;
 }
 
-.img-container img:hover {
-  transform: scale(1.05);
-}
+
 
 /* Ícone (lupa) sobre a imagem no canto superior direito */
 .hover-icon {
