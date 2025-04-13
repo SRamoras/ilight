@@ -2,19 +2,26 @@
 
 # iLight Remake
 
-[Visit the hosted application](https://sramoras.github.io/ilight/)
+[Live Demo](https://sramoras.github.io/ilight/)
 
 ## About the Project
 
-This project is a remake of the original website [ilight.pt](https://ilight.pt/). The main idea is to recreate the visual and interactive experience of the original site using modern technologies such as React and GSAP for animations.
+iLight Remake is a modern reinterpretation of the original website [ilight.pt](https://ilight.pt/). This project was built using React and GSAP to replicate and enhance the unique visual and interactive experience of the original site. The goal is to bring a contemporary touch to the design while preserving the essence of the brand.
+
+## Project Goals and Vision
+
+- **Enhance User Experience:** Leverage advanced animations with GSAP to deliver a smooth and engaging interface.
+- **Modernize the Design:** Update the visual layout using React and Vite, ensuring fast loading times and a responsive design.
+- **Preserve Brand Identity:** Maintain the core elements and feel of the original iLight website while infusing modern techniques.
+- **Seamless Navigation:** Implement hash-based routing with React Router for efficient navigation, especially suited for GitHub Pages deployment.
 
 ## Technologies Used
 
-- **React**: The main framework used for building the user interface.
-- **Vite**: A build and development tool that provides a fast and optimized environment.
-- **GSAP (GreenSock Animation Platform)**: A library used to create sophisticated and high-performance animations.
-- **React Router**: Provides routing management with hash routing to ensure compatibility with GitHub Pages.
-- **gh-pages**: A tool for automating deployments to GitHub Pages.
+- **React:** Main framework for building the user interface.
+- **Vite:** A fast and optimized build and development tool.
+- **GSAP (GreenSock Animation Platform):** Library for creating advanced, high-performance animations.
+- **React Router:** Manages routing using hash-based navigation for better compatibility with GitHub Pages.
+- **gh-pages:** Automates deployment on GitHub Pages.
 
 ## How to Run Locally
 
