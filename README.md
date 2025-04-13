@@ -23,16 +23,3 @@ iLight Remake is a modern reinterpretation of the original website [ilight.pt](h
 - **React Router:** Manages routing using hash-based navigation for better compatibility with GitHub Pages.
 - **gh-pages:** Automates deployment on GitHub Pages.
 
-## How to Run Locally
-
-### Prerequisites
-
-- Node.js (LTS version recommended)
-- npm or Yarn
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/ilight.git
-   cd ilight
