@@ -1,0 +1,8 @@
+# robots.txt para ilight.pt
+
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Allow: /
+
+Sitemap: https://www.ilight.pt/sitemap.xml
