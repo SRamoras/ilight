@@ -1,31 +1,31 @@
-![Imagem](public/images/ilightreadme.png)
+![Image](public/images/ilightreadme.png)
 
 # iLight Remake
 
-[Visite a aplicação hospedada](https://sramoras.github.io/ilight/)
+[Visit the hosted application](https://sramoras.github.io/ilight/)
 
-## Sobre o Projeto
+## About the Project
 
-Este projeto é um remake do site original [ilight.pt](https://ilight.pt/). A ideia principal é recriar a experiência visual e interativa do site original, utilizando uma abordagem moderna com a tecnologia React e animações com GSAP.
+This project is a remake of the original website [ilight.pt](https://ilight.pt/). The main idea is to recreate the visual and interactive experience of the original site using modern technologies such as React and GSAP for animations.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **React**: Framework principal utilizado para a construção da interface de usuário.
-- **Vite**: Ferramenta de build e desenvolvimento, proporcionando um ambiente rápido e otimizado.
-- **GSAP (GreenSock Animation Platform)**: Biblioteca utilizada para criar animações sofisticadas e de alta performance.
-- **React Router**: Gerenciamento de rotas com hash para compatibilidade com GitHub Pages.
-- **gh-pages**: Ferramenta para deploy automático no GitHub Pages.
+- **React**: The main framework used for building the user interface.
+- **Vite**: A build and development tool that provides a fast and optimized environment.
+- **GSAP (GreenSock Animation Platform)**: A library used to create sophisticated and high-performance animations.
+- **React Router**: Provides routing management with hash routing to ensure compatibility with GitHub Pages.
+- **gh-pages**: A tool for automating deployments to GitHub Pages.
 
-## Como Executar Localmente
+## How to Run Locally
 
-### Pré-requisitos
+### Prerequisites
 
-- Node.js (versão LTS recomendada)
-- npm ou Yarn
+- Node.js (LTS version recommended)
+- npm or Yarn
 
-### Instalação
+### Installation
 
-1. Clone o repositório:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/seu-usuario/ilight.git
+   git clone https://github.com/your-username/ilight.git
    cd ilight
