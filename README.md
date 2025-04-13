@@ -2,7 +2,7 @@
 
 # iLight Remake
 
-Check out the live demo here: Live Demo [Live Demo](https://sramoras.github.io/ilight/)
+Check out the live demo here: [Live Demo](https://sramoras.github.io/ilight/)
 
 ## About the Project
 
